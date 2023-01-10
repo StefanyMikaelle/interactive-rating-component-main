@@ -1,0 +1,212 @@
+:root{
+    --clr-primary-orange: hsl(25, 97%, 53%);
+
+    --clr-neutral-white: hsl(0, 0%, 100%);
+    --clr-neutral-light-grey: hsl(217, 12%, 63%);
+    --clr-neutral-medium-grey: hsl(216, 12%, 24%);
+    --clr-neutral-dark-blue: hsl(213, 19%, 18%);
+    --clr-neutral-very-dark-blue: hsl(216, 12%, 8%);
+
+    --ff-base: 'Overpass', sans-serif;
+   
+
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    3. Allow percentage-based heights in the application
+  */
+  html, body {
+    height: 100%;
+  }
+  /*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+  body {
+    /* line-height: 1.0; */
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+    6. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    7. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    8. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  
+  h1,h2,h3 {
+    line-height: 1;
+  }
+
+
+
+  /* general styling*/
+
+body{
+    font-family: var(--ff-base);
+    background-color: var(--clr-neutral-very-dark-blue);
+    font-size: 14px;
+}
+
+
+.rating-state, .thankyou-state{
+    background-color: var(--clr-neutral-dark-blue);
+    width: 328px;
+    height: 358px;
+    border-radius: 10px;
+    margin: 154px auto 154px;
+    padding: 30px;
+}
+
+.rating-state__icon-container, .rating-state__number-container__number{
+    background-color: var(--clr-neutral-medium-grey);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+    margin-bottom: 20px;
+    color: var(--clr-neutral-light-grey);
+    border: none;
+}
+
+.rating-state__title, .thankyou-state__title{
+    color: var(--clr-neutral-white);
+    margin-bottom: 30px;
+    font-size: 20px;
+    width: 300px;
+}
+
+.rating-state__description, .thankyou-state__paragraph{
+    color: var(--clr-neutral-light-grey);
+    margin-bottom: 30px;
+    letter-spacing: -0.45px;
+}
+
+.rating-state__number-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.rating-state__number-container__number:hover{
+    background-color: var(--clr-neutral-light-grey);
+    color: var(--clr-neutral-white);
+    cursor: pointer;
+}
+.rating-state__number-container__number:focus{
+    background-color: var(--clr-primary-orange);
+    color: var(--clr-neutral-white);
+}
+.rating-state__button{
+    width: 274px;
+    height: 45px;
+    border-radius: 20px;
+    border: none;
+    margin-top: 10px;
+    background-color: var(--clr-primary-orange);
+    text-transform: uppercase;
+    color: var(--clr-neutral-white);
+    font-weight: 700px;
+    letter-spacing: 3px;
+}
+.rating-state__button:hover{
+    background-color: var(--clr-neutral-white);
+    color: var(--clr-primary-orange);
+    cursor: pointer;
+}
+
+/*-----Trankyou-state------*/
+.thankyou-state{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+.thankyou-state__image{
+    width: 40%;
+    margin-bottom: 20px;
+}
+.thankyou-state__result{
+    background-color: var(--clr-neutral-medium-grey);
+    width: 80%;
+    height: 30px;
+    border-radius: 1.2rem;
+    color: var(--clr-primary-orange);
+    text-align: center;
+    padding: 7px 0;
+    margin-bottom: 20px;
+    font-size: 13px;
+}
+.thankyou-state__title{
+    text-align: center;
+}
+.thankyou-state__paragraph{
+    text-align: center;
+}
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+/*-----Desktop------*/
+@media (min-width:600px) {
+  /* .thankyou-state{
+    display: none;
+  } */
+    .rating-state, .thankyou-state{
+      width: 418px;
+      height: 414px;
+      margin: 188px auto 188px;
+      padding: 30px;
+      font-size: 17px;
+    } 
+    .thankyou-state__result{
+      margin-top: 20px;
+      width: 300px;
+      font-size: 16px;
+  }
+    .rating-state__title, .thankyou-state__title{
+        margin-top: 36px;
+        font-size: 25px;
+    }
+    .rating-state__icon-container, .rating-state__number-container__number{
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+    .rating-state__number-container{
+      margin-top: 30px;
+    }
+    .rating-state__button{
+      margin-top: 30px;
+      width: 341px;
+      height: 45px;
+    }
+}
